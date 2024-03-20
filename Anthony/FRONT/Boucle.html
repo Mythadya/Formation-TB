@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collecteur de prénoms</title>
+</head>
+<body>
+    <h1>Entrez des prénoms</h1>
+    <input type="text" id="nameInput" placeholder="Entrez un prénom">
+    <button onclick="addName()">Ajouter</button>
+    <p id="instruction"></p>
+    <ul id="nameList"></ul>
+
+    <script>
+        let names = [];
+        const nameInput = document.getElementById('nameInput');
+        const instruction = document.getElementById('instruction');
+        const nameList = document.getElementById('nameList');
+
+        function addName() {
+            const name = nameInput.value.trim();
+            if (name) {
+                names.push(name);
+                const listItem = document.createElement('li');
+                listItem.textContent = name;
+                nameList.appendChild(listItem);
+                nameInput.value = '';
+                instruction.textContent = 'Entrez un autre prénom!';
+            } else {
+                displayResults();
+            }
+        }
+
+        function displayResults() {
+            alert(`Prénoms collectés:\n${names.join('\n')}`);
+            console.log(`Prénoms collectés:`);
+            console.log(names.join('\n'));
+        }
+    </script>
+</body>
+</html>
