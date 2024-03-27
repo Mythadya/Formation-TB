@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <script>
+    function strtok(str1, str2, n) {
+        const words = str1.split(str2);
+        return words[n-1] || '';
+    }
+    </script>
+</head>
+<body>
+    <script>
+    const str1 = 'Robert/Dupont/80000/Amiens';
+    const str2 = '/';
+    const n = 4;
+    console.log(strtok(str1, str2, n));
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu de Devinette de Nombre</title>
+</head>
+
+<body>
+    <label for="guess">Entrez votre estimation :</label>
+    <input type="text" id="guess">
+    <button id="checkButton">Vérifier</button>
+    <p id="message"></p>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const nombreMagique = Math.floor(Math.random() * 100) + 1;
+
+            const checkButton = document.getElementById('checkButton');
+            const messageElement = document.getElementById('message');
+
+            checkButton.addEventListener('click', function () {
+                const estimation = parseInt(document.getElementById('guess').value);
+
+               if ( isNaN(estimation)) {
+                messageElement.textContent = 'Veuillez entrer un nombre valide.';
+               } else if ( estimation === nombreMagique) {
+                messageElement.textContent = 'Felicitation ! Vous avez deviné le bon nombres .';
+               } else if (estimation < nombreMagique) {
+                messageElement.textContent = ' Trop bas. Essayez encore.';
+               } else {
+                messageElement.textContent = ' Trop élevé. Essayez encore .';
+               }
+            });
+        });
+    </script>
+</body>
+
+</html>
