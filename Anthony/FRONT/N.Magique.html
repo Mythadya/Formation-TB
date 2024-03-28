@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jeu de Devinette de Nombre</title>
 </head>
+
 <body>
   <label for="guess">Entrez votre estimation :</label>
   <input type="text" id="guess">
@@ -12,14 +14,11 @@
   <p id="message"></p>
 
   <script>
-    // Générer un nombre aléatoire entre 1 et 100
     const nombreMagique = Math.floor(Math.random() * 100) + 1;
 
     function verif() {
-      // Obtenir l'estimation de l'utilisateur
       const estimation = parseInt(document.getElementById('guess').value);
 
-      // Obtenir l'élément message
       const messageElement = document.getElementById('message');
 
       if (isNaN(estimation)) {
@@ -34,4 +33,5 @@
     }
   </script>
 </body>
+
 </html>
