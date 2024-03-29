@@ -6,33 +6,35 @@
     <link rel="stylesheet" type="text/css" href=../STATIQUE/CSS/JSformulaire.css />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulaire de Contact</title>
+    <title>Nous contacter</title>
 </head>
 
 <body>
+<div>
     <h2>Vos coordonnées :</h2>
     <h4>* Ces zones sont obligatoires pour envoyer le formulaire.</h4>
+</div>
     <form action="traitement.php" method="post">
-        <label for="societe">Société*:</label><br>
+        <label for="societe">Société *:</label>
         <input type="text" id="societe" name="societe" required minlength="1"><br><br>
 
-        <label for="personne">Personne a contacter*:</label><br>
+        <label for="personne">Personne a contacter*:</label>
         <input type="text" id="personne" name="personne" required minlength="1"><br><br>
 
-        <label for="textarea">Adresse de l'entreprise :</label><br>
+        <label for="textarea">Adresse de l'entreprise :</label>
         <textarea id="textarea" name="textarea" rows="4" cols="50"></textarea><br><br>
 
-        <label for="codepostal">Code postal*:</label><br>
+        <label for="codepostal">Code postal*:</label>
         <input type="text" id="codepostal" name="codepostal" pattern="[0-9]{5}" required><br><br>
 
-        <label for="ville">Ville*:</label><br>
+        <label for="ville">Ville*:</label>
         <input type="text" id="ville" name="ville" required minlength="1"><br><br>
 
-        <label for="téléphone">Téléphone</label><br>
-        <input type="text" id="telephone" name="telephone" required minlength="1"><br><br>
-
-        <label for="email">Email*:</label><br>
+        <label for="email">Email*:</label>
         <input type="email" id="email" name="email" required><br><br>
+
+        <label for="téléphone">Téléphone</label>
+        <input type="text" id="telephone" name="telephone" required minlength="1"><br><br>
 
         <label for="environnement">Environnement Technique*:</label><br>
         <select id="environnement" name="environnement" required>
@@ -58,12 +60,6 @@
         <input type="submit" value="Envoyer">
         <input type="reset" value="Annuler">
 
-        <!--         <input type="text" id="societe" name="societe" required minlength="1" title="Veuillez saisir le nom de la société">
-        <input type="text" id="personne" name="personne" required minlength="1" title="Entrez le nom de la personne a contacter">
-        <input type="text" id="codepostal" name="codepostal" required minlength="1" title="Entrez un code postal valide">
-        <input type="text" id="ville" name="ville" required minlength="1" title="Entrez un nom de ville valide">
-        <input type="text" id="email" name="email" required minlength="1" title="Veuillez Entrez une adresse Email valide">
-        <input type="text" id="environnement" name="environnement" required minlength="1" title="Veuillez Selectionner votre environnement Technique"> -->
     </form>
 </body>
 

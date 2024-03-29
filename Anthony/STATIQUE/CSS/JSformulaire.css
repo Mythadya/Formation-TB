@@ -1,0 +1,72 @@
+h4{
+    color: red;
+}
+h2{
+    font-size: 22px;
+}
+/* CSS pour centrer le formulaire */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    height: 100vh; /* Utilise toute la hauteur de la fenêtre */
+    margin: 0;
+}
+h2, h4 {
+    color: #333;
+    margin: 0;
+    margin-bottom: 10px; /* Ajout d'un espace entre les éléments */
+}
+
+form {
+    max-width: 600px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: calc(100% - 10px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #45a049;
+}
+
+input:invalid {
+    border-color: #ff0000;
+}
+
+input:valid {
+    border-color: #00ff00;
+}
+
+/* Vous pouvez ajouter d'autres styles CSS selon vos besoins */
