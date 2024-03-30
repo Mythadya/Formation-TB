@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: auto;
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: #45a049;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .form-group label,
+        .form-group input,
+        .form-group textarea {
+            float: left;
+            width: calc(50% - 10px);
+        }
+
+        .form-group input[type="radio"],
+        .form-group select {
+            width: calc(100% - 22px);
+        }
+
+        .form-group textarea {
+            width: calc(100% - 12px);
+            height: 100px;
+        }
+
+        .form-group label {
+            width: 100%;
+            font-weight: bold;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .form-group.required label:after {
+            content: "*";
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Contact</h1>
+        <form action="traitement.php" method="post">
+            <div class="form-group required">
+                <label for="nom">Votre Nom :</label>
+                <input type="text" name="nom" id="nom" required>
+            </div>
+            <div class="form-group required">
+                <label for="prenom">Votre Prénom :</label>
+                <input type="text" name="prenom" id="prenom" required>
+            </div>
+            <div class="form-group required">
+                <label>Genre :</label><br>
+                <input type="radio" id="feminin" name="genre" value="Feminin" required>
+                <label for="feminin">Féminin</label>
+                <input type="radio" id="masculin" name="genre" value="Masculin" required>
+                <label for="masculin">Masculin</label>
+            </div>
+            <div class="form-group required">
+                <label for="date">Date de naissance :</label>
+                <input type="date" name="ddn" id="date" required>
+            </div>
+            <div class="form-group required">
+                <label for="cp">Code postal :</label>
+                <input type="text" name="cp" id="CodePostal" required>
+            </div>
+            <div class="form-group">
+                <label for="adresse">Adresse :</label>
+                <input type="text" name="adresse" id="adresse">
+            </div>
+            <div class="form-group">
+                <label for="ville">Ville :</label>
+                <input type="text" name="ville" id="ville">
+            </div>
+            <div class="form-group required">
+                <label for="email">Email :</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div class="form-group required">
+                <label for="sujet">Sujet :</label>
+                <select id="sujet" name="sujet" required>
+                    <option value=""></option>
+                    <option value="Commandes">Mes commandes</option>
+                    <option value="Question">Question sur un produit</option>
+                    <option value="Reclamation">Réclamation</option>
+                    <option value="Autres">Autres</option>
+                </select>
+            </div>
+            <div class="form-group required">
+                <label for="votrequestion">Votre Question :</label>
+                <textarea name="question" id="votrequestion" rows="5" required></textarea>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" name="traitement" id="traitement" value="formulaire" required>
+                <label for="traitement">J'accepte le traitement informatique de ce formulaire</label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Envoyer">
+                <input type="reset" value="Annuler">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
+
