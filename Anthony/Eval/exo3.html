@@ -1,49 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Supprimer un prénom</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche de prénom</title>
 </head>
 <body>
+    <h1>Recherche de prénom</h1>
+    <form id="prenomForm">
+        <label for="prenomInput">Entrez un prénom :</label>
+        <input type="text" id="prenomInput" name="prenom">
+        <button type="submit">Rechercher</button>
+    </form>
+    <div id="resultat"></div>
 
-<h2>Supprimer un prénom</h2>
+    <script>
+        document.getElementById("prenomForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Empêcher le formulaire de se soumettre
 
-<input type="text" id="prenomInput" placeholder="Entrez un prénom">
-<button onclick="supprimerPrenom()">Supprimer</button>
+            // Récupérer le prénom saisi par l'utilisateur
+            var prenom = document.getElementById("prenomInput").value;
+            
+            // Tableau de prénoms
+            var tab = ["Alice", "Bob", "Charlie", "David", "Emma"];
 
-<p id="message"></p>
+            var found = false;
+            for (var i = 0; i < tab.length; i++) {
+                if (tab[i] === prenom) {
+                    found = true;
+                    for (var j = i; j < tab.length - 1; j++) {
+                        tab[j] = tab[j+1];
+                    }
+                    tab[tab.length - 1] = "";
+                    break;
+                }
+            }
 
-<script>
-// Tableau de prénoms
-var tab = ["Alice", "Bob", "Charlie", "David", "Eve"];
-
-function supprimerPrenom() {
-    var prenom = document.getElementById("prenomInput").value;
-    var index = tab.indexOf(prenom);
-
-    if (index !== -1) {
-        tab.splice(index, 1); // Supprimer le prénom trouvé
-        tab.push(""); // Mettre une case vide à la fin
-
-        // Mettre à jour l'affichage
-        afficherPrenoms();
-        document.getElementById("message").textContent = "";
-    } else {
-        document.getElementById("message").textContent = "Le prénom n'a pas été trouvé.";
-    }
-}
-
-function afficherPrenoms() {
-    var listePrenoms = "<ul>";
-    for (var i = 0; i < tab.length; i++) {
-        listePrenoms += "<li>" + tab[i] + "</li>";
-    }
-    listePrenoms += "</ul>";
-
-    document.body.innerHTML += listePrenoms;
-}
-</script>
-
+            // Afficher le résultat
+            var resultatDiv = document.getElementById("resultat");
+            if (found) {
+                resultatDiv.textContent = "Le prénom a été trouvé et supprimé.";
+            } else {
+                resultatDiv.textContent = "Prénom non trouvé.";
+            }
+        });
+    </script>
 </body>
 </html>
