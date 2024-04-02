@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+  <style>
+   .error {
+      color: red;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <form onsubmit="return validateForm()">
+    <label for="nom">Nom:</label>
+    <input type="text" id="nom" name="nom" required>
+    <div class="error" id="error-nom"></div>
+
+    <label for="prenom">Prénom:</label>
+    <input type="text" id="prenom" name="prenom" required>
+    <div class="error" id="error-prenom"></div>
+
+    <label for="Genre">Genre:</label>
+    <select id="Genre" name="Genre" required>
+      <option value="">-- Sélectionner --</option>
+      <option value="Homme">Homme</option>
+      <option value="Femme">Femme</option>
+    </select>
+    <div class="error" id="error-Genre"></div>
+
+    <label for="date">Date de naissance:</label>
+    <input type="date" id="date" name="date" required>
+    <div class="error" id="error-date"></div>
+
+    <label for="CodePostal">Code Postal:</label>
+    <input type="text" id="CodePostal" name="CodePostal" required>
+    <div class="error" id="error-CodePostal"></div>
+
+    <label for="Adresse">Adresse:</label>
+    <input type="text" id="Adresse" name="Adresse" required>
+    <div class="error" id="error-Adresse"></div>
+
+    <label for="Ville">Ville:</label>
+    <input type="text" id="Ville" name="Ville" required>
+    <div class="error" id="error-Ville"></div>
+
+    <label for="Email">Email:</label>
+    <input type="email" id="Email" name="Email" required>
+    <div class="error" id="error-Email"></div>
+
+    <label for="sujet">Sujet:</label>
+    <input type="text" id="sujet" name="sujet" required>
+    <div class="error" id="error-sujet"></div>
+
+    <label for="Votre question">Votre question:</label>
+    <textarea id="Votre question" name="Votre question" required></textarea>
+    <div class="error" id="error-Votre question"></div>
+
+    <!-- Submit button -->
+    <input type="submit" value="Submit">
+  </form>
+
+  <script>
+    function validateForm() {
+      let inputs = ['nom', 'prenom', 'Genre', 'date', 'CodePostal', 'Adresse', 'Ville', 'Email', 'sujet', 'Votre question'];
+
+      for (let i = 0; i < inputs.length; i++) {
+        let input = document.getElementById(inputs[i]);
+        let errorMessage = document.getElementById(`error-${inputs[i]}`);
+        if (input.value.trim() === '') {
+          errorMessage.style.display = 'block';
+          input.style.borderColor = 'red';
+        } else {
+          errorMessage.style.display = 'none';
+          input.style.borderColor = 'initial';
+        }
+      }
+
+      for (let i = 0; i < inputs.length; i++) {
+        let input = document.getElementById(inputs[i]);
+        if (input.style.borderColor === 'red') {
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+    document.querySelectorAll('input[id], select[id], textarea[id]').forEach((input) => {
+      let errorMessage = document.createElement('p');
+      errorMessage.id = `error-${input.id}`;
+      errorMessage.style.color = 'red';
+      errorMessage.style.display = 'none';
+      errorMessage.textContent = `Veuillez remplir ce champ.`;
+      input.parentNode.insertBefore(errorMessage, input.nextSibling);
+    });
+  </script>
+</body>
+</html>
