@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculateur de prix</title>
+  <style>
+    input[type="number"] {
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Calculateur de prix</h1>
+  <label for="prix">Prix unitaire (en €) :</label>
+  <input type="number" id="prix" min="0"><br>
+  <label for="quantite">Quantité :</label>
+  <input type="number" id="quantite" min="0"><br>
+  <button onclick="calculerPrix()">Calculer</button><br><br>
+
+  <div id="resultat"></div>
+
+  <script>
+    function calculerPrix() {
+      var prixUnitaire = parseFloat(document.getElementById('prix').value);
+      var quantite = parseInt(document.getElementById('quantite').value);
+
+      var total = prixUnitaire * quantite;
+      var remise = 0;
+      var port = 0;
+      
+      if (total >= 100 && total <= 200) {
+        remise = total * 0.05;
+      } else if (total > 200) {
+        remise = total * 0.10;
+      }
+
+      var totalRemise = total - remise;
+
+      if (totalRemise <= 500) {
+        port = Math.max(6, totalRemise * 0.02);
+      }
+
+      var prixAPayer = totalRemise + port;
+
+      var resultat = "Remise : " + remise.toFixed(2) + " €<br>";
+      resultat += "Frais de port : " + port.toFixed(2) + " €<br>";
+      resultat += "<strong>Total à payer : " + prixAPayer.toFixed(2) + " €</strong>";
+
+      document.getElementById('resultat').innerHTML = resultat;
+    }
+  </script>
+</body>
+</html>

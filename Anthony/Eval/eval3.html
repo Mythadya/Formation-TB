@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche de prénom</title>
+</head>
+<body>
+    <h1>Recherche de prénom</h1>
+    <form id="prenomForm">
+        <label for="prenomInput">Entrez un prénom :</label>
+        <input type="text" id="prenomInput" name="prenom">
+        <button type="submit">Rechercher</button>
+    </form>
+    <div id="resultat"></div>
+
+    <script>
+        document.getElementById("prenomForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Empêcher le formulaire de se soumettre
+
+            // Récupérer le prénom saisi par l'utilisateur
+            var prenom = document.getElementById("prenomInput").value;
+            
+            // Tableau de prénoms
+            var tab = ["Alice", "Bob", "Charlie", "David", "Emma"];
+
+            var found = false;
+            for (var i = 0; i < tab.length; i++) {
+                if (tab[i] === prenom) {
+                    found = true;
+                    for (var j = i; j < tab.length - 1; j++) {
+                        tab[j] = tab[j+1];
+                    }
+                    tab[tab.length - 1] = "";
+                    break;
+                }
+            }
+
+            // Afficher le résultat
+            var resultatDiv = document.getElementById("resultat");
+            if (found) {
+                resultatDiv.textContent = "Le prénom a été trouvé et supprimé.";
+            } else {
+                resultatDiv.textContent = "Prénom non trouvé.";
+            }
+        });
+    </script>
+</body>
+</html>

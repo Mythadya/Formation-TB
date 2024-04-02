@@ -4,21 +4,20 @@ h4{
 h2{
     font-size: 22px;
 }
-/* CSS pour centrer le formulaire */
 
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     display: flex;
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
-    height: 100vh; /* Utilise toute la hauteur de la fenêtre */
+    justify-content: center; 
+    align-items: center;
+    height: 100vh;
     margin: 0;
 }
 h2, h4 {
     color: #333;
     margin: 0;
-    margin-bottom: 10px; /* Ajout d'un espace entre les éléments */
+    margin-bottom: 10px;
 }
 
 form {
@@ -68,5 +67,3 @@ input:invalid {
 input:valid {
     border-color: #00ff00;
 }
-
-/* Vous pouvez ajouter d'autres styles CSS selon vos besoins */

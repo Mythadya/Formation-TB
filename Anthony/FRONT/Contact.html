@@ -10,6 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href=../STATIQUE/CSS/style.css />
+    <script src="../DYNAMIQUE/JAVASCRIPT/Contact.js"></script>
     <title>contact</title>
 </head>
 
@@ -23,42 +24,43 @@
     </ul><br>
     <img id="conlo" src="promotion.jpg" alt="Promotion" title="Promotion jarditou"><br>
     <h1 id="act">Contact</h1>
-    <form action="your_server_script.php" method="GET">
-        <fieldset id="set">
+    <fieldset id="set">
+        <form name="Contact" action="/submit.php" method="post" class="Conta" onsubmit="return validateForm()">
             <legend>Vos Coordonnées</legend>
-            <label for="nom">Nom:</label><input type="text" name="nom" id="nom"><br>
-            <label for="prenom">Prénom:</label><input type="text" name="prenom" id="prenom"><br>
+            <label for="nom" id="error-nom">Nom:</label><input type="text" name="nom" id="nom"><br>
+            <label for="prenom" id="error-prenom">Prénom:</label><input type="text" name="prenom" id="prenom"><br>
             <br>
-            <label for="Genre">Genre:</label>
+            <label for="Genre" id="error-Genre">Genre:</label><br>
             <input type="radio" id="Genre" name="Genre" value="Feminin">
-            <label for="feminin">Féminin</label>
+            <label for="feminin">Féminin</label><br>
             <input type="radio" id="Genre" name="Genre" value="Masculin">
             <label for="masculin">Masculin</label><br>
             <br>
-            <label for="date">Date de naissance:</label><input type="date" name="ddn" id="date"><br>
-            <label for="CodePostal">Code Postal:</label><input type="text" name="CodePostal" id="Codepostal"><br>
-            <label for="Adresse">Adresse:</label><input type="text" name="Adresse" id="Adresse"><br>
-            <label for="Ville">Ville:</label><input type="text" name="Ville" id="Ville"><br>
-            <label for="Email">Email:</label><input type="text" name="Email" id="Email"><br>
-        </fieldset>
-        <fieldset id="eld">
-            <legend>Votre Demande</legend>
-            <label for="sujet">Sujet:</label>
-            <select id="sujet" name="sujet">
-                <option value="" selected>-</option>
-                <option value="commandes">Mes commandes</option>
-                <option value="Question">Question sur un produit</option>
-                <option value="Réclamation">Réclamation</option>
-                <option value="Autres">Autres</option>
-            </select><br>
-            <label for="Votre question">Votre question:</label><br>
-            <textarea name="Votre question" rows="10" cols="50"></textarea>
-        </fieldset>
-        <input type="checkbox" name="traitement" id="traitement" value="formulaire"> * J'accepte le traitement
-        information de ce formulaire<br>
-        <br>
-        <input type="submit" value="Envoyer">
-        <input type="reset" value="Annuler">
+            <label for="date" id="error-date">Date de naissance:</label><input type="date" name="ddn" id="date"><br>
+            <label for="CodePostal" id="error-CodePostal">Code Postal:</label><input type="text" name="CodePostal"
+                id="Codepostal" pattern="[0-9]{5}"><br>
+            <label for="Adresse" id="error-Adresse">Adresse:</label><input type="text" name="Adresse" id="Adresse"><br>
+            <label for="Ville" id="error-Ville">Ville:</label><input type="text" name="Ville" id="Ville"><br>
+            <label for="Email" id="error-Email">Email:</label><input type="text" name="Email" id="Email"><br>
+    </fieldset>
+    <fieldset id="eld">
+        <legend>Votre Demande</legend>
+        <label for="sujet" id="error-sujet">Sujet:</label>
+        <select id="sujet" name="sujet">
+            <option value="" selected>-</option>
+            <option value="commandes">Mes commandes</option>
+            <option value="Question">Question sur un produit</option>
+            <option value="Réclamation">Réclamation</option>
+            <option value="Autres">Autres</option>
+        </select><br>
+        <label for="VotreQuestion" id="error-VotreQuestion">Votre question:</label><br>
+        <textarea name="Votre question" rows="10" cols="50"></textarea>
+    </fieldset>
+    <input type="checkbox" name="traitement" id="traitement" value="formulaire"> * J'accepte le traitement
+    information de ce formulaire<br>
+    <br>
+    <input type="submit" value="Envoyer">
+    <input type="reset" value="Annuler">
     </form>
 </body>
 
