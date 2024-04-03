@@ -16,12 +16,10 @@
 
     <script>
         document.getElementById("prenomForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Empêcher le formulaire de se soumettre
+            event.preventDefault();
 
-            // Récupérer le prénom saisi par l'utilisateur
             var prenom = document.getElementById("prenomInput").value;
             
-            // Tableau de prénoms
             var tab = ["Alice", "Bob", "Charlie", "David", "Emma"];
 
             var found = false;
@@ -36,7 +34,6 @@
                 }
             }
 
-            // Afficher le résultat
             var resultatDiv = document.getElementById("resultat");
             if (found) {
                 resultatDiv.textContent = "Le prénom a été trouvé et supprimé.";

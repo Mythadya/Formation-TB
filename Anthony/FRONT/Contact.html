@@ -32,9 +32,9 @@
             <br>
             <label for="Genre">Genre:</label><br>
             <input type="radio" id="Genre" name="Genre" value="Feminin">
-            <label for="feminin">Féminin</label><br>
+            <label for="feminin" id="error-feminin">Féminin</label><br>
             <input type="radio" id="Genre" name="Genre" value="Masculin">
-            <label for="masculin">Masculin</label><br>
+            <label for="masculin" id="error-masculin">Masculin</label><br>
             <br>
             <label for="date" id="error-date">Date de naissance:</label><input type="date" name="ddn" id="date"><br>
             <label for="CodePostal" id="error-CodePostal">Code Postal:</label><input type="text" name="CodePostal"
@@ -59,7 +59,7 @@
     <input type="checkbox" name="traitement" id="traitement" value="formulaire"> * J'accepte le traitement
     information de ce formulaire<br>
     <br>
-    <input type="submit" value="Envoyer">
+    <input type="submit" value="Envoyer" id="submit-button">
     <input type="reset" value="Annuler">
     </form>
 </body>
