@@ -134,10 +134,7 @@
     font-size:larger;
 }
 .error-message {
-
-    margin: 5px 0;
-  
+    color: red;
+    font-size: 0.8em;
+    margin: 0;
   }
-.error {
-    border: 1px solid red;
-}
