@@ -1,21 +1,78 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Intercepte la validation du formulaire</title>
+<html lang="fr">
 
-        <script>
-            function checkForm(f) {
-                alert("Vous vous appelez : " + f.elements['nom'].value + " " + f.elements['prenom'].value);
-                return false; // do not submit the form
-            }
-        </script>
-    </head>
-    <body>
-        <h2>Intercepte la validation du formulaire</h2>
-        <form id="form1" name="form1" onSubmit="return checkForm(this);">
-            <input type="text" name= "nom" value="Dupont" />
-            <input type="text" name= "prenom" value="Eric" />
-            <input type="submit" id="idSubForm1" name="subForm1" value="Connection" />
-        </form>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire avec Validation</title>
+</head>
+
+<body>
+    <form id="monFormulaire">
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required><br>
+
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom" required><br>
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="age">Age :</label>
+        <input type="text" id="age" name="age" required><br>
+
+        <label for="sexe">Sexe :</label>
+
+        <select id="sexe" name="sexe" required>
+            <option value="">--Choix requis--</option>
+            <option value="F">Femme</option>
+            <option value="H">Homme</option>
+            <option value="O">Autre</option>
+        </select><br>
+
+        <label for="adresse">Adresse :</label>
+        <input type="text" id="adresse" name="adresse" required><br>
+
+        <label for="cp">Code Postal :</label>
+        <input type="text" id="cp" name="cp" required><br>
+
+        <label for="ville">Ville :</label>
+        <input type="text" id="ville" name="ville" required><br>
+
+        <label for="pays">Pays :</label>
+        <input type="text" id="pays" name="pays" required><br>
+
+        <label for="profession">Profession :</label>
+
+        <select id="profession" name="profession" required>
+            <option value="">--Choix requis--</option>
+            <option value="sans">Sans-Emploi</option>
+            <option value="enseignant">Enseignant</option>
+            <option value="ingenieur">Ingénieur</option>
+            <option value="medecin">Médecin</option>
+            <option value="infirmier">Infirmier/Infirmière</option>
+            <option value="avocat">Avocat</option>
+            <option value="comptable">Comptable</option>
+            <option value="architecte">Architecte</option>
+            <option value="commercial">Commercial</option>
+            <option value="chef_entreprise">Chef d'entreprise</option>
+            <option value="developpeur">Développeur informatique</option>
+            <option value="graphiste">Graphiste</option>
+            <option value="journaliste">Journaliste</option>
+            <option value="mecanicien">Mécanicien</option>
+            <option value="plombier">Plombier</option>
+            <option value="electricien">Électricien</option>
+            <option value="cuisinier">Cuisinier</option>
+            <option value="serveur">Serveur/Serveuse</option>
+            <option value="agriculteur">Agriculteur</option>
+            <option value="artiste">Artiste</option>
+            <option value="scientifique">Scientifique</option>
+            <option value="autre">Autre</option>
+        </select><br>
+
+        <button type="submit">Soumettre</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+
 </html>
